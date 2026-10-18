@@ -1,8 +1,8 @@
-// Endpoint utama Jikan API (mengambil daftar anime terpopuler)
-const API_URL = 'https://api.jikan.moe/v4/top/anime';
+// Endpoint utama Kitsu API (mengambil 12 anime dengan rating tertinggi beserta kategorinya)
+const API_URL = 'https://kitsu.io/api/edge/anime?sort=-averageRating&page[limit]=12&include=categories';
 
 // Aktifkan baris di bawah ini (dan komentari API_URL di atas) saat demo untuk menguji error HTTP 404:
-// const API_URL = 'https://api.jikan.moe/v4/animex';
+// const API_URL = 'https://kitsu.io/api/edge/animex';
 
 // Seleksi elemen DOM (Modul 2 Bagian 5.1 - DOM Selection)
 const loadingEl = document.getElementById('loading');
@@ -16,17 +16,29 @@ const searchInput = document.getElementById('search-input');
 const auraFiltersEl = document.getElementById('aura-filters');
 
 // State aplikasi (Modul 2 Bagian 2.1 - let vs const)
-let animeData = [];      // data asli dari API, diisi sekali
-let keyword = '';        // kata kunci dari input search real-time
-let activeAura = 'all';  // id Aura yang sedang aktif dari tombol Aura
+let animeData = [];            // data asli anime dari json.data, diisi sekali
+let categoryMap = new Map();   // map id kategori -> nama kategori dari json.included
+let keyword = '';              // kata kunci dari input search real-time
+let activeAura = 'all';        // id Aura yang sedang aktif dari tombol Aura
 
 /**
- * Mengecek apakah sebuah anime memiliki salah satu genre yang dicari.
+ * Mengambil daftar nama kategori/genre milik satu anime berdasarkan relasi id di categoryMap.
+ * Konsep Modul 2: Bagian 4.2 (Array Methods: map & filter).
+ */
+function getGenres(anime) {
+  const categoryRefs = anime.relationships?.categories?.data || [];
+  return categoryRefs
+    .map((ref) => categoryMap.get(ref.id))
+    .filter(Boolean);
+}
+
+/**
+ * Mengecek apakah sebuah anime memiliki salah satu kategori/genre yang dicari.
  * Konsep Modul 2: Bagian 4.2 (Array Method some & includes).
  */
 function hasGenre(anime, targetGenres) {
-  const genres = anime.genres || [];
-  return genres.some((genre) => targetGenres.includes(genre.name));
+  const genres = getGenres(anime);
+  return genres.some((genre) => targetGenres.includes(genre));
 }
 
 // Definisi kategori Aura sebagai Array of Objects (Modul 2 Bagian 4.1 - Array & Object)
@@ -34,7 +46,7 @@ const AURAS = [
   { id: 'all',        label: 'Semua',       match: () => true },
   { id: 'energy',     label: 'High Energy', match: (anime) => hasGenre(anime, ['Action', 'Sports', 'Adventure']) },
   { id: 'melancholy', label: 'Melancholy',  match: (anime) => hasGenre(anime, ['Drama', 'Romance']) },
-  { id: 'binge',      label: 'Binge Mode',  match: (anime) => (anime.episodes ?? 0) > 24 },
+  { id: 'binge',      label: 'Binge Mode',  match: (anime) => (anime.attributes?.episodeCount ?? 0) > 24 },
 ];
 
 /**
@@ -51,34 +63,35 @@ function escapeHTML(str) {
 }
 
 /**
- * Mengubah satu objek anime dari Jikan API menjadi string HTML card.
+ * Mengubah satu objek anime (format JSON:API dari Kitsu) menjadi string HTML card.
  * Konsep Modul 2: Bagian 3.3 (Template Literal), Bagian 4.2 (Array Methods: map, slice, join), & Nullish Coalescing (??).
  */
 function createCard(anime) {
-  const title = escapeHTML(anime.title || 'Tanpa judul');
-  const imageUrl = anime.images?.jpg?.image_url || '';
-  const scoreDisplay = anime.score ?? '-';
-  const episodesDisplay = anime.episodes ?? '?';
-  const typeDisplay = escapeHTML(anime.type ?? 'TV');
-  const yearDisplay = anime.year ?? '-';
+  const attrs = anime.attributes || {};
+  const title = escapeHTML(attrs.canonicalTitle || 'Tanpa judul');
+  const posterUrl = attrs.posterImage?.small || attrs.posterImage?.original || '';
 
-  const genreNames = (anime.genres || [])
-    .map((genre) => escapeHTML(genre.name))
+  let scoreDisplay = '-';
+  if (attrs.averageRating) {
+    const ratingNum = parseFloat(attrs.averageRating);
+    if (!isNaN(ratingNum)) {
+      scoreDisplay = (ratingNum / 10).toFixed(1);
+    }
+  }
+
+  const episodesDisplay = attrs.episodeCount ?? '?';
+  const genreNames = getGenres(anime)
+    .map((name) => escapeHTML(name))
     .slice(0, 3);
   const genresDisplay = genreNames.length > 0 ? genreNames.join(', ') : 'Tanpa genre';
 
   return `
-    <article data-id="${anime.mal_id}" class="bg-secondary rounded-lg shadow overflow-hidden flex flex-col border border-gray-800 hover:border-primary transition">
-      <div class="relative">
-        <img src="${imageUrl}" alt="${title}" class="w-full h-64 object-cover" loading="lazy">
-        <span class="absolute top-2 right-2 bg-dark/80 text-xs font-semibold px-2 py-1 rounded text-white">
-          ${typeDisplay} · ${yearDisplay}
-        </span>
-      </div>
+    <article data-id="${anime.id}" class="bg-secondary rounded-lg shadow overflow-hidden flex flex-col border border-gray-800 hover:border-primary transition">
+      <img src="${posterUrl}" alt="${title}" class="w-full h-64 object-cover" loading="lazy">
       <div class="p-4 flex flex-col flex-1 justify-between">
         <div>
           <h3 class="font-bold text-white line-clamp-2 mb-1" title="${title}">${title}</h3>
-          <p class="text-sm text-gray-300">⭐ ${scoreDisplay} · ${episodesDisplay} eps</p>
+          <p class="text-sm text-gray-300">⭐ ${scoreDisplay} · ${episodesDisplay} episode</p>
         </div>
         <p class="text-xs text-primary font-medium mt-3">${genresDisplay}</p>
       </div>
@@ -112,7 +125,7 @@ function applyFilters() {
 
   const filtered = animeData
     .filter((anime) => {
-      const title = (anime.title || '').toLowerCase();
+      const title = (anime.attributes?.canonicalTitle || '').toLowerCase();
       return title.includes(keyword);
     })
     .filter((anime) => currentAura.match(anime));
@@ -165,7 +178,7 @@ function renderAuraButtons() {
 }
 
 /**
- * Mengambil data anime dari Jikan API secara asynchronous, mengelola loading state dan error handling.
+ * Mengambil data anime dari Kitsu API secara asynchronous, mengelola loading state dan error handling.
  * Konsep Modul 2: Bagian 7 & 8 (Asynchronous JS, Fetch API, async/await, try/catch/finally, response.ok).
  */
 async function fetchAnime() {
@@ -177,6 +190,9 @@ async function fetchAnime() {
 
   try {
     const response = await fetch(API_URL, {
+      headers: {
+        'Accept': 'application/vnd.api+json',
+      },
       signal: AbortSignal.timeout(10000),
     });
 
@@ -186,13 +202,23 @@ async function fetchAnime() {
 
     const json = await response.json();
     animeData = json.data || [];
+    const included = json.included || [];
+
+    categoryMap = new Map();
+    if (Array.isArray(included)) {
+      included.forEach((item) => {
+        if (item.type === 'categories' && item.id && item.attributes?.title) {
+          categoryMap.set(item.id, item.attributes.title);
+        }
+      });
+    }
 
     applyFilters();
   } catch (error) {
     console.error('Error saat fetch anime:', error);
 
     if (error.name === 'TimeoutError') {
-      errorText.textContent = 'Waktu permintaan habis (timeout). Server terlalu lama merespons.';
+      errorText.textContent = 'Server terlalu lama merespons. Coba lagi beberapa saat lagi.';
     } else if (error instanceof TypeError) {
       errorText.textContent = 'Gagal terhubung ke jaringan. Periksa koneksi internetmu lalu coba lagi.';
     } else {
@@ -217,4 +243,3 @@ retryBtn.addEventListener('click', fetchAnime);
 // Inisialisasi awal: render tombol Aura dan ambil data anime dari API
 renderAuraButtons();
 fetchAnime();
-
