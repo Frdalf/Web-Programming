@@ -1,0 +1,722 @@
+{
+ "anime": {
+  "data": [
+   {
+    "id": "7442",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Attack on Titan",
+     "averageRating": "84.21",
+     "episodeCount": 25,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/7442/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "1"
+       },
+       {
+        "type": "categories",
+        "id": "3"
+       },
+       {
+        "type": "categories",
+        "id": "6"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "3936",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Fullmetal Alchemist: Brotherhood",
+     "averageRating": "85.33",
+     "episodeCount": 64,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/3936/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "1"
+       },
+       {
+        "type": "categories",
+        "id": "2"
+       },
+       {
+        "type": "categories",
+        "id": "6"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "6448",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Hunter x Hunter (2011)",
+     "averageRating": "84.54",
+     "episodeCount": 148,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/6448/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "1"
+       },
+       {
+        "type": "categories",
+        "id": "2"
+       },
+       {
+        "type": "categories",
+        "id": "6"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "11469",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Steins;Gate",
+     "averageRating": "84.91",
+     "episodeCount": 24,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/11469/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "12"
+       },
+       {
+        "type": "categories",
+        "id": "8"
+       },
+       {
+        "type": "categories",
+        "id": "11"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "41370",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Frieren: Beyond Journey's End",
+     "averageRating": "86.12",
+     "episodeCount": 28,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/41370/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "2"
+       },
+       {
+        "type": "categories",
+        "id": "3"
+       },
+       {
+        "type": "categories",
+        "id": "6"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "12",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "One Piece",
+     "averageRating": "83.10",
+     "episodeCount": 0,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/12/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "1"
+       },
+       {
+        "type": "categories",
+        "id": "2"
+       },
+       {
+        "type": "categories",
+        "id": "5"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "8271",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Haikyuu!!",
+     "averageRating": "82.70",
+     "episodeCount": 25,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/8271/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "7"
+       },
+       {
+        "type": "categories",
+        "id": "5"
+       },
+       {
+        "type": "categories",
+        "id": "3"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "10765",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Your Lie in April",
+     "averageRating": "82.95",
+     "episodeCount": 22,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/10765/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "3"
+       },
+       {
+        "type": "categories",
+        "id": "4"
+       },
+       {
+        "type": "categories",
+        "id": "9"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "13401",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Violet Evergarden",
+     "averageRating": "83.40",
+     "episodeCount": 13,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/13401/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "3"
+       },
+       {
+        "type": "categories",
+        "id": "6"
+       },
+       {
+        "type": "categories",
+        "id": "9"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "42765",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Spy x Family",
+     "averageRating": "82.30",
+     "episodeCount": 12,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/42765/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "1"
+       },
+       {
+        "type": "categories",
+        "id": "5"
+       },
+       {
+        "type": "categories",
+        "id": "9"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "1555",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Clannad: After Story",
+     "averageRating": "83.80",
+     "episodeCount": 24,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/1555/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "3"
+       },
+       {
+        "type": "categories",
+        "id": "4"
+       },
+       {
+        "type": "categories",
+        "id": "9"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "41024",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Jujutsu Kaisen",
+     "averageRating": "82.10",
+     "episodeCount": 24,
+     "posterImage": {
+      "small": "https://media.kitsu.app/anime/poster_images/41024/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "1"
+       },
+       {
+        "type": "categories",
+        "id": "6"
+       }
+      ]
+     }
+    }
+   }
+  ],
+  "included": [
+   {
+    "id": "1",
+    "type": "categories",
+    "attributes": {
+     "title": "Action"
+    }
+   },
+   {
+    "id": "2",
+    "type": "categories",
+    "attributes": {
+     "title": "Adventure"
+    }
+   },
+   {
+    "id": "3",
+    "type": "categories",
+    "attributes": {
+     "title": "Drama"
+    }
+   },
+   {
+    "id": "4",
+    "type": "categories",
+    "attributes": {
+     "title": "Romance"
+    }
+   },
+   {
+    "id": "5",
+    "type": "categories",
+    "attributes": {
+     "title": "Comedy"
+    }
+   },
+   {
+    "id": "6",
+    "type": "categories",
+    "attributes": {
+     "title": "Fantasy"
+    }
+   },
+   {
+    "id": "7",
+    "type": "categories",
+    "attributes": {
+     "title": "Sports"
+    }
+   },
+   {
+    "id": "8",
+    "type": "categories",
+    "attributes": {
+     "title": "Thriller"
+    }
+   },
+   {
+    "id": "9",
+    "type": "categories",
+    "attributes": {
+     "title": "Slice of Life"
+    }
+   },
+   {
+    "id": "10",
+    "type": "categories",
+    "attributes": {
+     "title": "Mystery"
+    }
+   },
+   {
+    "id": "11",
+    "type": "categories",
+    "attributes": {
+     "title": "Psychological"
+    }
+   },
+   {
+    "id": "12",
+    "type": "categories",
+    "attributes": {
+     "title": "Sci-Fi"
+    }
+   }
+  ]
+ },
+ "manga": {
+  "data": [
+   {
+    "id": "38",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Berserk",
+     "averageRating": "85.80",
+     "chapterCount": 380,
+     "posterImage": {
+      "small": "https://media.kitsu.app/manga/poster_images/38/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "1"
+       },
+       {
+        "type": "categories",
+        "id": "2"
+       },
+       {
+        "type": "categories",
+        "id": "6"
+       },
+       {
+        "type": "categories",
+        "id": "3"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "14916",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Vagabond",
+     "averageRating": "85.10",
+     "chapterCount": 327,
+     "posterImage": {
+      "small": "https://media.kitsu.app/manga/poster_images/14916/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "1"
+       },
+       {
+        "type": "categories",
+        "id": "2"
+       },
+       {
+        "type": "categories",
+        "id": "3"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "103",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "One Piece",
+     "averageRating": "84.60",
+     "chapterCount": 1120,
+     "posterImage": {
+      "small": "https://media.kitsu.app/manga/poster_images/103/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "1"
+       },
+       {
+        "type": "categories",
+        "id": "2"
+       },
+       {
+        "type": "categories",
+        "id": "5"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "25097",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Oyasumi Punpun",
+     "averageRating": "83.70",
+     "chapterCount": 147,
+     "posterImage": {
+      "small": "https://media.kitsu.app/manga/poster_images/25097/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "3"
+       },
+       {
+        "type": "categories",
+        "id": "11"
+       },
+       {
+        "type": "categories",
+        "id": "9"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "20",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Monster",
+     "averageRating": "84.20",
+     "chapterCount": 162,
+     "posterImage": {
+      "small": "https://media.kitsu.app/manga/poster_images/20/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "10"
+       },
+       {
+        "type": "categories",
+        "id": "11"
+       },
+       {
+        "type": "categories",
+        "id": "8"
+       }
+      ]
+     }
+    }
+   },
+   {
+    "id": "41",
+    "type": "x",
+    "attributes": {
+     "canonicalTitle": "Horimiya",
+     "averageRating": "80.50",
+     "chapterCount": 125,
+     "posterImage": {
+      "small": "https://media.kitsu.app/manga/poster_images/41/small.jpg"
+     }
+    },
+    "relationships": {
+     "categories": {
+      "data": [
+       {
+        "type": "categories",
+        "id": "4"
+       },
+       {
+        "type": "categories",
+        "id": "5"
+       },
+       {
+        "type": "categories",
+        "id": "9"
+       }
+      ]
+     }
+    }
+   }
+  ],
+  "included": [
+   {
+    "id": "1",
+    "type": "categories",
+    "attributes": {
+     "title": "Action"
+    }
+   },
+   {
+    "id": "2",
+    "type": "categories",
+    "attributes": {
+     "title": "Adventure"
+    }
+   },
+   {
+    "id": "3",
+    "type": "categories",
+    "attributes": {
+     "title": "Drama"
+    }
+   },
+   {
+    "id": "4",
+    "type": "categories",
+    "attributes": {
+     "title": "Romance"
+    }
+   },
+   {
+    "id": "5",
+    "type": "categories",
+    "attributes": {
+     "title": "Comedy"
+    }
+   },
+   {
+    "id": "6",
+    "type": "categories",
+    "attributes": {
+     "title": "Fantasy"
+    }
+   },
+   {
+    "id": "7",
+    "type": "categories",
+    "attributes": {
+     "title": "Sports"
+    }
+   },
+   {
+    "id": "8",
+    "type": "categories",
+    "attributes": {
+     "title": "Thriller"
+    }
+   },
+   {
+    "id": "9",
+    "type": "categories",
+    "attributes": {
+     "title": "Slice of Life"
+    }
+   },
+   {
+    "id": "10",
+    "type": "categories",
+    "attributes": {
+     "title": "Mystery"
+    }
+   },
+   {
+    "id": "11",
+    "type": "categories",
+    "attributes": {
+     "title": "Psychological"
+    }
+   },
+   {
+    "id": "12",
+    "type": "categories",
+    "attributes": {
+     "title": "Sci-Fi"
+    }
+   }
+  ]
+ }
+}
